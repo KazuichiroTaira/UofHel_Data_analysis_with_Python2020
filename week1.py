@@ -8,39 +8,63 @@
 #name = input("Give me your name: Jarkko")
 #print("Hello,", name)
 
+import math
+
+def area_of_triangle(b, h):
+
+    t = b * h * 1 / 2
+
+    return f'The area is {t}'
 
 
-def triple(q):
-    #print("I have been called with argument", q )
-    q *= 3   # q = q * 3
-    #print("I will return", q)
-    return q
+def area_of_rectangle(b, h):
 
-def square(s):
+    r = b * h
 
-    s = s **2
-    return s
+    return f'The area is {r}'
 
+def area_of_circle(r):
 
+    c = r ** 2 * math.pi
 
-for x in range(1,11):
+    return f'The area is {c}'
 
-    r = triple(x)
-    r2 = square(x)
+# type_of_shape = ['triangle', 'rectangle','circle']
 
-    #print('triple(', x,')==', r, 'square(', x, ')==', r2)
-    # to_show = f'triple({x})=={r} square({x})=={r2}'
-    print(f'triple({x})=={r} square({x})=={r2}')
-    # print('The square of ', x, 'is', r2)
+type_of_shape = input ('Chose a shape (triangle, rectangle, circle):')
+print(type_of_shape)
 
+if type_of_shape == 'triangle':
 
-    #y = triple(x)
+    base_of_triangle = input('Give base of the triangle:')
+    print(base_of_triangle)
 
+    height_of_triangle = input('Give height of the triangle: ')
+    print(height_of_triangle)
 
-    # y as string
-    #print("y", y)
+    area = area_of_triangle(int(base_of_triangle), int(height_of_triangle))
+    print(area)
 
 
-    # x=7
-    # x *= 3
-    # print("x", x)
+elif type_of_shape == 'rectangle':
+
+    base_of_rectangle = input('Give base of the rectangle:')
+    print(base_of_rectangle)
+
+    height_of_rectangle = input('Give height of the rectangle:')
+    print(height_of_rectangle)
+
+    area = area_of_rectangle(int(base_of_rectangle), int(height_of_rectangle))
+    print(area)
+
+
+elif type_of_shape == 'circle':
+
+    radius_of_circle = input('Give radius of the circle:')
+    print(radius_of_circle)
+
+    area = area_of_circle(int(radius_of_circle))
+    print(area)
+
+else:
+    print('Unknown shape!!')
